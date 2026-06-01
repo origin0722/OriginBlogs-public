@@ -1,387 +1,178 @@
-# 🌟 XHBlogs — 开源个人博客框架
+# OriginBlogs — 开源个人博客框架
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue?logo=react)](https://react.dev/)
 [![Tailwind](https://img.shields.io/badge/Tailwind-4-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python)](https://www.python.org/)
 
-一个采用 Next.js 构建的高颜值、毛玻璃（Glassmorphism）风格个人博客系统。自带完善的前端展示与独立的本地后台控制台，支持 Markdown 沉浸式写作、草稿管理以及便捷的图床配置。
+一个基于 Next.js 构建的毛玻璃（Glassmorphism）风格个人博客系统，集成前端展示与本地后台管理控制台，支持 Markdown 写作、草稿管理及图床配置。
 
-本指南将带你从零开始，轻松部署并使用 XHBlogs。
-
-> 📢 **项目声明**：本项目基于 [Xinghuisama 的 XHBlogs](https://github.com/Xinghongia/Kirameku) 进行二次修改与发布，遵从 [CC BY-NC 4.0](LICENSE) 许可协议。感谢原作者的辛勤付出！
+> **项目声明**：本项目基于 [Xinghuisama 的 XHBlogs（原项目名 Kirameku）](https://github.com/Xinghongia/Kirameku) 进行二次修改并开源发布，遵从 [CC BY-NC 4.0](LICENSE) 许可协议。感谢原作者的辛勤付出与开源精神。
 
 ---
+
 ## 语言
 
-[![English](https://img.shields.io/badge/Language-English-blue.svg)](README_en.md)
-[![中文](https://img.shields.io/badge/语言-中文-red.svg)](README.md)
+[English](README_EN.md) | 中文
 
-## ✨ 特性
+---
 
-- 🎨 **毛玻璃 UI** — Glassmorphism 设计风格，支持动态渐变/图片背景
-- ✍️ **Markdown 写作** — TipTap 富文本编辑器 + Markdown 渲染，支持 LaTeX 数学公式
-- 🖥️ **本地 CMS 后台** — Python FastAPI 驱动的管理面板，可视化管理所有内容
-- 📸 **照片墙 / 项目展示 / 友链** — 完整的个人品牌建设工具
-- 🎵 **网易云音乐集成** — 歌单管理与在线播放
-- 💬 **Gitalk 评论** — 基于 GitHub Issues 的轻量评论系统
-- 🐱 **AI 猫猫助手** — 接入 DeepSeek / OpenAI 兼容 API 的对话助手
-- 🌐 **Vercel 一键部署** — 完美支持 Vercel 部署，自带详细教程
-- 🎮 **灵境与等级系统** — 创意工坊 + RPG 等级系统
-- ❄️ **季节特效** — 樱花、雪花、萤火虫等动态背景效果
+## 特性
 
+- Glassmorphism 毛玻璃 UI，支持动态渐变与图片背景
+- TipTap 富文本编辑器 + Markdown 渲染，支持 LaTeX 数学公式与代码高亮
+- Python 驱动的本地 CMS 后台，可视化管理文章、草稿与站点配置
+- 照片墙、项目展示、友链等个人品牌建设模块
+- 网易云音乐歌单管理与在线播放
+- 基于 GitHub Issues 的 Gitalk 评论系统
+- AI 对话助手，兼容 DeepSeek / OpenAI API
+- 创意工坊与 RPG 等级系统
+- 樱花、雪花、萤火虫等动态季节特效
+- 全页面移动端适配
 
-## 一、快速开始部署
+---
 
-### 1. 环境配置
+## 快速开始
 
-在开始之前，请确保你的电脑已安装以下运行环境，否则后续程序将无法正常启动：
+### 环境要求
 
-- **Node.js** (推荐版本 v18.x 或以上)
-- **包管理器** (npm)
-- **Git** (用于拉取代码与版本控制)
-- **Python** (建议版本 3.10 及以上，本系统在 3.10 环境下测试通过)
-- *可选：云存储/图床服务（后续会有详细配置说明）*
+- Node.js >= 18
+- npm
+- Git
+- Python >= 3.10
 
-### 2. 获取源码
+### 本地运行
 
 ```bash
+# 克隆仓库
 git clone https://github.com/你的用户名/OriginBlogs-public.git
 cd OriginBlogs-public
-```
 
-### 3. 快速开始
+# 启动前端
+cd OriginBlogs
+npm install
+npm run dev
+# 访问 http://localhost:3000
 
-#### ① 启动脚本
+# 启动管理后台（另开终端）
+cd ../my-blog-manager
+# Windows: 双击 Start.bat
+# 脚本将自动检测并安装所需依赖，随后启动后台控制台
+```text
 
-当你完成上述环境的配置后，恭喜你，最基础的准备工作已经搞定了！
-首先，进入 `my-blog-manager` 文件夹（**⚠️ 注意：请绝对不要重命名此文件夹，否则会导致环境路径解析失败！**）
-
-双击运行文件夹中的启动脚本：
-`Start.bat`
-脚本会自动检测并安装所需的依赖包。等待环境配置完成后，程序会自动唤起精美的后台控制台。
-
-#### ② 部署你的博客到 Vercel
-
-> **提示**：本教程主要演示如何将项目部署至 Vercel，因为 Vercel 对 Next.js 框架有着最顶级的原生支持。
->
-> **前提**：请确保已安装 Git，并拥有一个 GitHub 账号。**接下来的步骤请务必按顺序操作！**
-
-> **请确保你已完成以下操作**：
->
-> **第一步：本地全局配置**
-
-设置用户名
-
-`git config --global user.name "你的Github用户名"`
-
-设置邮箱（必须是你在 GitHub 绑定的邮箱）
-
-`git config --global user.email "你绑定在Github的邮箱@example.com"`
-
-> **第二步：初始化本地仓库**
->
-> 进入你的项目文件夹，执行以下CMD命令行操作：(及前端部署文件夹，这里是XHBlogs)
-
-1. 初始化 Git 仓库，生成隐藏的 .git 文件夹
-   `git init`
-2. 将所有文件添加到暂存区（注意后面有个点）
-   `git add .`
-3. 提交到本地版本库，并添加备注
-   `git commit -m "first commit"`
-
-**1. 配置本地物理路径**
-打开控制台的“设置”页面。
-在拉取的源码中，包含 `XHBlogs-mananger` 和 `XHBlogs` 两个核心文件夹。请在控制台中指定 `XHBlogs` 的本地物理路径。
-
-![选择物理路径](picture/Pasted%20image%2020260427111646.png)
-
-例如：`F:\Test2\XHBlogs`
-
-![填入本地BLOG物理路径](picture/Pasted%20image%2020260427112311.png)
-
-> **关键步骤**：填入路径后，请务必点击 **[测试路径]** 进行连通性验证！！！验证通过后，再点击下方的 **[保存双轨配置]**。
-
-**2. 在 GitHub 创建私有仓库**
-登录 GitHub，新建一个用于托管博客源码的仓库（建议设置为 **Private 私有仓库** 以保护数据隐私）。
-
-![创建仓库](picture/Pasted%20image%2020260427112905.png)
-
-仓库名称可自定义。
-
-![仓库命名](picture/Pasted%20image%2020260427113030.png)
-
-获取该仓库的 SSH 地址，并将其复制粘贴到控制台的“B线”配置中：
-
-![复制SSH](picture/Pasted%20image%2020260427113120.png)
-
-源码分支填写为 `main`。确认无误后，再次点击 **[保存双轨配置]**。
-
-**3. 获取并配置部署密钥**
-点击控制台中的 **[获取B线专属密钥]** 按钮：
-
-![专属密钥](picture/98b965b5-6193-4690-a478-fe1a9abd594e.png)
-
-进入你的 GitHub 仓库页面，导航至 `Settings` -> `Deploy keys` 界面：
-
-![Deploy Keys](picture/Pasted%20image%2020260427113705.png)
-
-将刚才复制的密钥填入 `Key` 框中，`Title` 可随意命名（例如：`XHBlogs-Deploy-Key`）。
-
-> **🚨 严重警告**：下方的 **Allow write access** 选项必须勾选！！！
-> 设置完毕后，点击 **Add key** 保存。
-
-**4. 初始化并推送源码**
-返回本地控制台，点击 **[智能初始化双轨环境]**，静待程序执行完毕。
-完成后，点击 **[仅同步源码]** 按钮：
-
-![仅同步源码](picture/Pasted%20image%2020260427121539.png)
-
-程序将开始向 GitHub 推送代码。**在此期间，请千万不要切换页面或关闭窗口**：
-
-![同步进度](picture/Pasted%20image%2020260427121702.png)
-
-进度条完成后，说明前端静态页面源码已成功托管至 GitHub。
-
-> **此处可能出现无法推送bug**：
->
-> **请尝试**
->
-> 将SSH仓库地址改成如下图所示再进行初始化及同步源码
->
-> ![img.png](picture/img.png)
-
-**5. 部署至 Vercel 平台**
-访问 Vercel 官网，注册账号并绑定你的 GitHub 授权！
-
-![绑定账号](picture/Pasted%20image%2020260427121844.png)
-
-点击 `Add New...` 添加一个新的 Project，在 Import 列表中选择你刚刚推送到 GitHub 的仓库：
-
-![导入项目](picture/Pasted%20image%2020260427121939.png)
-
-例如我选择的是 `XHBlogS2`：
-
-![选择项目](picture/Pasted%20image%2020260427122034.png)
-
-在 Framework Preset（框架预设）中选择 **Next.js**，然后点击 **Deploy** 按钮开始部署：
-
-![点击Deploy](picture/Pasted%20image%2020260427122141.png)
-
-静候 Vercel 服务器构建你的博客~~
-
-![部署中](picture/Pasted%20image%2020260427122245.png)
-
-撒花！部署成功后，点击预览图即可直接访问你的专属网站！
-
-![部署成功](picture/Pasted%20image%2020260427122338.png)
-
-在项目仪表盘（Dashboard）中，你可以随时查看部署状态与详细日志：
-
-![查看详情](picture/Pasted%20image%2020260427122453.png)
-
-Vercel 默认会为你分配一个免费的二级域名：
-
-![分配域名](picture/Pasted%20image%2020260427122553.png)
+注意：请勿重命名 `my-blog-manager` 文件夹，否则会导致路径解析失败。
 
 ---
 
-### 问题 1：我要怎么样绑定自己的专属域名？
+## 项目结构
 
-**答：** 这里以“阿里云”购买的域名为例（其他服务商如腾讯云、Cloudflare 等操作逻辑基本一致）。
-
-首先登录阿里云控制台，进入【域名管理】页面：
-
-![域名管理](picture/Pasted%20image%2020260427123636.png)
-
-点击对应域名右侧的【解析】按钮：
-
-![点击解析](picture/Pasted%20image%2020260427123737.png)
-
-接着回到 Vercel，进入你的项目仪表盘，点击 **Settings**（或者直接点击域名旁的加号）：
-
-![点击加号](picture/Pasted%20image%2020260427123156.png)
-
-![进入设置](picture/Pasted%20image%2020260427123838.png)
-
-在 Domains 选项卡中，输入你购买的域名（例如 `example.com`），点击 **Add** 保存：
-
-![输入域名](picture/afb9fe5f-bf1e-4a8a-ae6b-379938f0924d.png)
-
-添加后，Vercel 会提供 `A` 记录和 `CNAME` 记录的配置参数。请将这些参数完整添加到阿里云的 DNS 解析设置中：
-
-![添加记录](picture/Pasted%20image%2020260427124533.png)
-
-> **注意**：添加记录时，请务必仔细核去记录类型和记录值（Value）！
-
-配置完成后等待几分钟（DNS 传播需要时间），在 Vercel 页面点击 **Refresh** 刷新状态！！
-
-![Refresh](picture/Pasted%20image%2020260427124625.png)
-
-当状态显示为正常后，你就可以通过自己的专属域名访问博客了！（例如：`www.example.com`）。
+```text
+OriginBlogs-public/
+├── OriginBlogs/              # 前端博客（Next.js App Router）
+│   ├── app/                  # 页面路由
+│   │   ├── about/            # 关于页
+│   │   ├── chatter/          # 杂谈
+│   │   ├── friends/          # 友链
+│   │   ├── moments/          # 说说
+│   │   ├── music/            # 音乐
+│   │   ├── photowall/        # 照片墙
+│   │   ├── posts/            # 文章
+│   │   ├── projects/         # 项目展示
+│   │   ├── timeline/         # 时间线
+│   │   └── tree/             # 灵境（创意工坊 + 等级）
+│   ├── components/           # 通用组件
+│   ├── custom/               # 自定义扩展
+│   └── public/               # 静态资源
+├── my-blog-manager/          # 本地管理后台
+├── picture/                  # 文档图片
+├── LICENSE                   # CC BY-NC 4.0
+├── README.md
+└── README_EN.md
+```text
 
 ---
 
-## 二、更新设置及上传文件
+## 部署
 
-为了保护数据安全，本控制台采用了**“操作暂存区”**机制。**请特别注意！！** 许多设置在修改后，必须主动执行“更新到本地”才能真正保存。需要执行此操作时，界面上方通常会有高亮提示。
+### 推送至 GitHub
 
-**操作示例：修改个人简介**
+```bash
+cd OriginBlogs
+git init
+git add .
+git commit -m "first commit"
+git remote add origin git@github.com:你的用户名/你的仓库.git
+git branch -M main
+git push -u origin main
+```text
 
-![修改简介](picture/Pasted%20image%2020260427125314.png)
+建议使用私有仓库以保护数据隐私。
 
-修改内容后，点击 **[暂存到操作队列]**：
+### 部署至 Vercel
 
-![暂存队列](picture/Pasted%20image%2020260427125430.png)
+1. 注册 [Vercel](https://vercel.com) 并绑定 GitHub 账号
+2. 点击 Add New → Project，导入你的博客仓库
+3. Framework Preset 选择 Next.js，点击 Deploy
 
-此时上方工具箱会提示待办操作。你可以随时撤销（清空全部），或者点击 **[更新本地]**。
+部署成功后，Vercel 会分配一个免费二级域名。也可在项目设置 → Domains 中绑定自定义域名，并按提示在 DNS 服务商处添加解析记录。
 
-> ⚠️ 注意：点击“更新本地”后，数据仅仅保存在了你的本地控制台环境中。
+### 本地双轨同步
 
-如果你希望让这些修改在前端博客页面生效，你必须继续点击 **[同步 Blog]**（前提是前端博客的物理路径已正确配置）：
+管理后台采用"操作暂存区"机制，修改内容后遵循以下流程使变更上线：
 
-![同步Blog](picture/Pasted%20image%2020260427125800.png)
-
-博客文章、说说（碎碎念）、杂谈等所有内容的发布与修改，均遵循此流程。
-
-> **💡 黄金法则**：暂存队列 -> 更新本地 -> 同步Blog
-
----
-
-## 三、如何推送你的修改到线上网页？
-
-当你在本地完成了满意的创作或设置调整，想要将其发布到公网让所有人看到时：
-
-请牢记，在执行了任何实质性修改并点击 **[同步Blog]** 后，请打开控制台的同步部署页面：
-
-![打开同步](picture/Pasted%20image%2020260427130216.png)
-
-确认“B线”地址正确无误，点击 **[仅同步源码]**。
-等待 GitHub Actions 或 Vercel 自动捕获更新。稍作喝杯茶的功夫，你就能在线上页面看到最新鲜的内容了！
+```text
+暂存到操作队列 → 更新本地 → 同步 Blog → 推送源码
+```text
 
 ---
 
-## 四、图床配置
+## 配置说明
 
-为了优化写作体验，控制台深度整合了图床上传功能。本指南推荐使用“去不图床”（[https://7bu.top](https://7bu.top)）。
-如果你习惯使用纯外链，工具台也完美支持直接插入图片 URL。如果想接入其他支持标准 API 的图床，也欢迎极客们自行尝试。
+### 图床
 
-**配置流程：**
+推荐使用[去不图床](https://7bu.top)，在后台填入 API Token 即可。也支持直接插入图片 URL。
 
-![图床配置](picture/Pasted%20image%2020260427124930.png)
+### AI 助手
 
-填入对应的 API Token 等信息后，你可以点击 **[发送探针测试Token]**，实时检验图床接口是否畅通。
+默认接入 DeepSeek API（兼容 OpenAI 格式）。在后台设置页填入 API Key，并在 Vercel 项目设置中添加环境变量 `DEEPSEEK_API_KEY`。
 
----
+### 评论系统
 
-## 五、AI 猫猫助理设置
+基于 GitHub OAuth Apps + Gitalk：
 
-博客系统内置了一只聪明的 AI 猫猫助理（默认接入 DeepSeek，也兼容 OpenAI API）。极客玩家也可以通过修改源码接入其他大语言模型。
+1. 在 GitHub 创建一个 Public 仓库用于存储评论
+2. 进入 GitHub Settings → Developer settings → OAuth Apps，新建应用
+3. Homepage URL 填博客首页地址，Authorization callback URL 填博客域名
+4. 将生成的 Client ID 和 Client Secret 填入后台评论设置
 
-首先，你需要申请一个 DeepSeek 的 API Key（在 [platform.deepseek.com](https://platform.deepseek.com) 获取）。拿到 API Key 后，在控制台进行如下配置：
+### 网易云音乐
 
-![猫猫设置](picture/Pasted%20image%2020260427134211.png)
-
-在本地设定好猫猫的专属系统提示词（性格）后，我们需要让线上环境也拥有调用 AI 的能力。请登录 Vercel：
-
-![Vercel环境](picture/Pasted%20image%2020260427134538.png)
-
-在项目设置中找到 `Environment Variables`（环境变量）：
-
-![搜索变量](picture/Pasted%20image%2020260427134633.png)
-
-进入你的博客工程详情：
-
-![项目工程](picture/Pasted%20image%2020260427134703.png)
-
-确保作用域（环境）包含线上环境，点击 **Add Environment Variables**：
-
-![添加变量](picture/Pasted%20image%2020260427135004.png)
-
-安全地注入你的密钥：
-
-- **Key** 输入：`DEEPSEEK_API_KEY`
-- **Value** 输入：你的真实 API 密钥
-
-![输入API](picture/Pasted%20image%2020260427135044.png)
-
-点击保存。下一次重新部署时，猫猫助理就会在线上苏醒了。
-
----
-
-## 六、评论系统配置
-
-本博客的评论系统基于 GitHub Issues（Gitalk 等类似方案）。你需要在 GitHub 创建一个 **Public（公开）** 仓库来专门存储网友的留言。
-
-在控制台评论设置中，填入你的 GitHub 用户名以及这个公开仓库的名称：
-
-![评论设置](./picture/Pasted%20image%2020260427135357.png)
-
-**接下来，配置 OAuth 授权以允许访客登录留言：**
-
-1. 登录 GitHub，点击右上角个人头像，进入 **Settings**（设置）。
-2. 滑动到左侧菜单栏最底部，点击 **Developer settings**。
-3. 在左侧选择 **OAuth Apps**，点击右上角的 **New OAuth App**。
-
-**关键应用信息填写指南：**
-
-
-| 字段名称                       | 填写建议                                                                           |
-| ------------------------------ | ---------------------------------------------------------------------------------- |
-| **Application name**           | 自定义名称，例如：`My-Blog-Comments`                                               |
-| **Homepage URL**               | 你的博客**首页完整地址** (例如 `https://www.example.com`)                      |
-| **Application description**    | 可选填                                                                             |
-| **Authorization callback URL** | **核心参数**：必须填写你的博客域名。如果经常本地调试，可填 `http://localhost:3000` |
-
-**提取核心密钥：**
-
-1. 提交注册（Register application）。
-2. 在跳转页面即可看到 **Client ID**，这是所需的第一项数据。
-3. 点击下方的 **Generate a new client secret** 生成密钥。
-4. **🚨 立刻将这串密钥复制并妥善保存！** 出于安全机制，离开此页面后该密钥将永远隐藏。
-
-将这组 `Client ID` 和 `Client Secret` 准确填入控制台的对应栏目中，保存即可激活评论功能。
-
----
-
-## 七、网易云音乐挂件设置
-
-![歌单设置](picture/Pasted%20image%2020260427141049.png)
-
-想给博客配上 BGM 吗？
-通过电脑浏览器打开 **网易云音乐网页版**。搜索并进入你喜欢的歌曲详情页，观察浏览器地址栏，URL 中的数字即为歌曲的专属 ID：
-
-![网易云ID](picture/Pasted%20image%2020260427141235.png)
-
-将这串 ID 复制并粘贴到控制台的搜索框中，即可一键将该歌曲收录进你的博客歌单库！
-
-![添加歌曲](picture/Pasted%20image%2020260427141356.png)
+在网易云音乐网页版中打开歌曲详情页，浏览器地址栏 URL 中的数字即为歌曲 ID，粘贴到后台搜索框即可收录。
 
 ---
 
 ## 参与贡献
 
-欢迎提交 Issue 和 Pull Request！在提交 PR 之前，请确保：
+欢迎提交 Issue 和 Pull Request。提交 PR 前请确保：
 
-1. 你的代码不与个人配置信息混合
-2. 敏感信息使用环境变量或 `siteConfig.ts`（已加入 `.gitignore`）
-3. 参考 `siteConfig.example.ts` 和 `.env.example` 了解需要配置的字段
+- 代码中不包含个人配置信息
+- 敏感信息通过环境变量管理
+- 参考 `siteConfig.example.ts` 和 `.env.example` 了解所需配置字段
 
 ### 开发计划
 
-- [ ] Docker 一键部署支持
+- [ ] Docker 一键部署
 - [ ] 更多主题皮肤
 - [ ] 多语言 i18n 支持
 - [ ] 评论邮件通知
 
-## 写在最后
-
-XHBLogs 还有诸多隐藏的细节功能，期待极客朋友们在实际使用中慢慢探索。本项目旨在提供一套开箱即用的前端静态展示与后台管理方案。如果你是资深开发者，完全可以基于 Next.js 源码进行二次开发，甚至手搓 Markdown 进行部署！
-
-**如果你觉得这个项目对你有帮助，请在 GitHub 上点亮一颗 ⭐ Star！**
+---
 
 ## 许可证
 
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+本项目基于 [Xinghuisama 的 XHBlogs](https://github.com/Xinghongia/Kirameku) 二次修改发布，采用 [CC BY-NC 4.0](LICENSE) 许可协议。
 
-> 本项目采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) 许可协议。允许免费学习、分享和二次修改后发布（二次开源发布需提及原作者），但**严禁用于任何商业用途**。
+- 允许自由学习、分享和二次修改后发布（需注明原作者）
+- 严禁用于任何商业用途

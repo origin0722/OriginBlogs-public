@@ -17,6 +17,6 @@ description: ''
 
 ### 关于本博客
 
-本博客基于 XHBlogs 搭建，是一个开源的 Next.js 个人博客框架。
+本博客基于 OriginBlogs 搭建，是一个开源的 Next.js 个人博客框架。
 
 你可以在后台管理面板中修改此页面内容。

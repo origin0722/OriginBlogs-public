@@ -45,7 +45,7 @@ next-env.d.ts
 my-blog-manager/data/deploy_config.json
 my-blog-manager/window_config.json
 my-blog-manager/public/backend_config.json
-XHBlogs/public/CNAME
+OriginBlogs/public/CNAME
 
 # Sensitive — do NOT commit real site configs if they contain secrets
 # Uncomment the lines below if you put real secrets in siteConfig.ts:

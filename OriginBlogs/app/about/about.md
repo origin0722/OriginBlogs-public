@@ -17,7 +17,7 @@ description: ''
 
 ### 关于本博客
 
-本博客基于 [XHBlogs](https://github.com/你的用户名/OriginBlogs-public) 搭建，是一个开源的 Next.js 个人博客框架，支持：
+本博客基于 [OriginBlogs](https://github.com/你的用户名/OriginBlogs-public) 搭建，是一个开源的 Next.js 个人博客框架，支持：
 
 - 🎨 毛玻璃（Glassmorphism）UI 设计风格
 - ✍️ Markdown 沉浸式写作体验

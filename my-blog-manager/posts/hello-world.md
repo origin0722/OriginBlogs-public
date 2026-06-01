@@ -1,5 +1,5 @@
 ---
-title: Hello World — 欢迎使用 XHBlogs！
+title: Hello World — 欢迎使用 OriginBlogs！
 date: '2026-01-01'
 tags: [入门, 教程]
 mood: happy
@@ -7,9 +7,9 @@ cover: ''
 description: 你的第一篇博客文章
 ---
 
-## 🎉 欢迎使用 XHBlogs！
+## 🎉 欢迎使用 OriginBlogs！
 
-恭喜你成功部署了 XHBlogs 博客系统！这是你的第一篇文章。
+恭喜你成功部署了 OriginBlogs 博客系统！这是你的第一篇文章。
 
 ### 快速开始
 

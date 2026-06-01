@@ -1,7 +1,7 @@
-diff --git a/XHBlogs/components/Navbar.tsx b/XHBlogs/components/Navbar.tsx
+diff --git a/OriginBlogs/components/Navbar.tsx b/OriginBlogs/components/Navbar.tsx
 index 1b399a7..37624f9 100644
---- a/XHBlogs/components/Navbar.tsx
-+++ b/XHBlogs/components/Navbar.tsx
+--- a/OriginBlogs/components/Navbar.tsx
++++ b/OriginBlogs/components/Navbar.tsx
 @@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react';
  import { usePathname } from 'next/navigation';
  import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, PanInfo } from 'framer-motion';

@@ -1,7 +1,7 @@
-diff --git a/XHBlogs/app/layout.tsx b/XHBlogs/app/layout.tsx
+diff --git a/OriginBlogs/app/layout.tsx b/OriginBlogs/app/layout.tsx
 index 933f538..cccc200 100644
---- a/XHBlogs/app/layout.tsx
-+++ b/XHBlogs/app/layout.tsx
+--- a/OriginBlogs/app/layout.tsx
++++ b/OriginBlogs/app/layout.tsx
 @@ -13,6 +13,7 @@ import GlobalToolbox from "../components/GlobalToolbox";
  import SplashScreen from "../components/SplashScreen";
  import CyberCat from '../components/CyberCat';
