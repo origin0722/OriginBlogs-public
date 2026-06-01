@@ -9,6 +9,8 @@
 
 本指南将带你从零开始，轻松部署并使用 XHBlogs。
 
+> 📢 **项目声明**：本项目基于 [Xinghuisama 的 XHBlogs](https://github.com/Xinghongia/Kirameku) 进行二次修改与发布，遵从 [CC BY-NC 4.0](LICENSE) 许可协议。感谢原作者的辛勤付出！
+
 ---
 ## 语言
 
