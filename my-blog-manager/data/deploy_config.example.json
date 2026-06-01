@@ -1,0 +1,7 @@
+{
+  "blogPath": "/你的本地路径/XHBlogs",
+  "staticRepoUrl": "",
+  "staticBranch": "gh-pages",
+  "sourceRepoUrl": "git@github.com:你的用户名/你的仓库.git",
+  "sourceBranch": "main"
+}

@@ -1,0 +1,53 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files (keep example only)
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Personal config (use .example files as templates)
+my-blog-manager/data/deploy_config.json
+my-blog-manager/window_config.json
+my-blog-manager/public/backend_config.json
+XHBlogs/public/CNAME
+
+# Sensitive — do NOT commit real site configs if they contain secrets
+# Uncomment the lines below if you put real secrets in siteConfig.ts:
+# */siteConfig.ts
+# !*/siteConfig.example.ts

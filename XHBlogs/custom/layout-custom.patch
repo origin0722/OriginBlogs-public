@@ -1,0 +1,42 @@
+diff --git a/XHBlogs/app/layout.tsx b/XHBlogs/app/layout.tsx
+index 933f538..cccc200 100644
+--- a/XHBlogs/app/layout.tsx
++++ b/XHBlogs/app/layout.tsx
+@@ -13,6 +13,7 @@ import GlobalToolbox from "../components/GlobalToolbox";
+ import SplashScreen from "../components/SplashScreen";
+ import CyberCat from '../components/CyberCat';
+ import DanmakuBackground from '../components/DanmakuBackground';
++import { EffectProvider, SeasonalEffect, MouseTrail, StarTrail } from '../custom';
+ 
+ import MobileBackButton from '../components/MobileBackButton';
+ 
+@@ -65,6 +66,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
+       <body className="w-screen overflow-x-hidden min-h-full flex flex-col relative transition-colors duration-1000 bg-slate-50 dark:bg-slate-950 font-serif">
+         <ThemeProvider>
+ 
++          <EffectProvider>
++
+           <SplashScreen />
+ 
+           <MusicProvider>
+@@ -132,6 +135,20 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
+             <CyberCat />
+           </div>
+ 
++          <div className="hidden md:block">
++            <SeasonalEffect />
++          </div>
++
++          <div className="hidden md:block">
++            <MouseTrail />
++          </div>
++
++          <div className="hidden md:block">
++            <StarTrail />
++          </div>
++
++          </EffectProvider>
++
+         </ThemeProvider>
+       </body>
+     </html>
